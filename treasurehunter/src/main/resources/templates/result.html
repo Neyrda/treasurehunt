@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Result</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+
+		<p th:if="${result == true}" style="font-size: 30px; text-align: center; justify-content: center"> Congratulation! YOU WIN!</p>
+		<p th:if="${result == false}" style="font-size: 30px; text-align: center; justify-content: center"> Unfortunately! YOU LOST!</p>
+
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Treasure Hunt</title>
+	<link rel="stylesheet" href="/style.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&display=swap" />
+	<script src="/treasurehunt.js" ></script>
+</head>
+<body>
+	
+	<div class="userDetails">
+		<input type="hidden" id="uid" th:value='${user.getId()}'/>
+		<input type="hidden" id="name" th:value='${user.getUserName()}'/>
+		<input type="hidden" id="live" th:value='${user.getLives()}'/>
+	
+	</div>
+	
+	
+	<div class="header">
+		<div class= "username">
+			<p th:text="'Hello ' + ${user.getUserName()} + '!'"></p>
+		</div>
+		<div class= "lives">
+			<p th:text="'Remaining live(s): ' + ${user.getLives()}"></p>
+		</div>
+		<div class= "record">
+			<p th:text="'Your record: ' + ${user.getRecord()} + ' step(s)'"></p>
+		</div>
+	
+	</div>
+	
+	<div class="board">
+		<div class="row"> 
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="row"> 
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="row"> 
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="row"> 
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="row"> 
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+	
+	</div>
+	<p id="message" style="text-align: center; font-family: Lora, Sans-serif; font-style: italic;">0 step(s)</p>
+
+</body>
+</html>
