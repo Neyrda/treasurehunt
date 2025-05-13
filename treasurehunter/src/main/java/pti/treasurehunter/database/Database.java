@@ -66,7 +66,7 @@ public class Database {
 
 
 
-	public void updateRecord(User user) {
+	public void updateUser(User user) {
 		
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
@@ -78,18 +78,5 @@ public class Database {
 		
 	}
 
-
-
-	public void decreaseLives(User user) {
-		
-		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
-		
-		session.merge(user);
-		
-		tx.commit();
-		session.close();
-		
-	}
 
 }

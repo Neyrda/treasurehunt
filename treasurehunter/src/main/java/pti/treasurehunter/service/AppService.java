@@ -48,26 +48,22 @@ public class AppService {
 		return userDto;
 	}
 	
-	public void updateUser(int userId, int steps) {
+	public void updateUser(int userId, int steps, int live, boolean result) {
 		
 		User user = db.getUserById(userId);
 		
-		if(steps < user.getRecord()) {
+		if((result == true) && (user.getRecord() == 0 || steps < user.getRecord())) {
 			user.setRecord(steps);
-			db.updateRecord(user);
+			db.updateUser(user);
+		}
+		
+		if(result == false) {
+			user.setLives(live);
+			db.updateUser(user);
 		}
 
 		
 	}
 
-
-	public void decreaseLives(int userId, int live) {
-		
-		User user = db.getUserById(userId);
-		
-		user.setLives(live);
-		db.decreaseLives(user);
-		
-	}
 
 }

@@ -13,7 +13,6 @@ window.onload = function(){
 	userId = parseInt(document.getElementById("uid").value);
 	userName = document.getElementById("name").value;
 	lives = parseInt(document.getElementById("live").value);
-	console.log(lives);
 	
 	if(lives === 0){
 		let restartLives = confirm("You are out of lives. Would you like to restart?");

@@ -46,7 +46,7 @@ public class AppController {
 		}
 		else {
 			model.addAttribute("user", user);
-			targetPage = "redirect:/treasurehunt/uid/" + user.getId();
+			targetPage = "treasurehunt.html";
 		}
 		
 	return targetPage;
@@ -72,10 +72,8 @@ public class AppController {
 			@RequestParam("lives") int live,
 			@PathVariable("uid") int userId) {
 		
-		service.updateUser(userId,steps);
-		if(result == false) {
-			service.decreaseLives(userId, live);
-		}
+		service.updateUser(userId,steps, live, result);
+		
 		model.addAttribute("steps", steps);
 		model.addAttribute("result", result);
 		return "result.html";
